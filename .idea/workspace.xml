@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="04cf09c1-dff8-4a2a-9211-6138b143d9f6" name="Default Changelist" comment="" />
+    <list default="true" id="04cf09c1-dff8-4a2a-9211-6138b143d9f6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/memes/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/memes/index.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,12 +126,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1599036697293</updated>
-      <workItem from="1599036698587" duration="5394000" />
+      <workItem from="1599036698587" duration="5461000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5394000" />
+    <option name="totallyTimeSpent" value="5461000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
