@@ -1,4 +1,6 @@
 <?php
+header('Content-type: application/json');
+
 include '../include/connect.php';
 $sqql = "SELECT * FROM meme";
 $result = $con->query($sqql);
