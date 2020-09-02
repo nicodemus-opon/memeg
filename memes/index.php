@@ -7,6 +7,6 @@ while ($row = $result->fetch_assoc()) {
 
 }
 $formatted_results = json_encode($rows);
-print json_encode($formatted_results);
+print json_encode($formatted_results,JSON_UNESCAPED_SLASHES);
 
 ?>
