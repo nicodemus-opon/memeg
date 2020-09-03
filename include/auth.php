@@ -22,6 +22,6 @@ function auth($api_key)
     }
 }
 
-print_r(auth("yeet"));
+//print_r(auth("yeet"));
 
 ?>
