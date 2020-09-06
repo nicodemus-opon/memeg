@@ -3,11 +3,14 @@ header('Content-type: application/json');
 
 include '../include/connect.php';
 include '../include/auth.php';
+include '../include/methods_.php';
 if (isset($_GET["auth"])) {
     $auth_k = $_GET["auth"];
     if (auth($auth_k) != "invalid") {
-        if (isset($_GET["m_idb"])) {
+        if (isset($_GET["q"])) {
             $sqql = "SELECT * FROM meme";
+        } elseif (isset($_GET["m_id"])) {
+            $sqql = "SELECT * FROM meme where Meme_id='" . $_GET["m_id"] . "'";
         } elseif (isset($_GET["m_id"])) {
             $sqql = "SELECT * FROM meme where Meme_id='" . $_GET["m_id"] . "'";
         } else {
@@ -22,13 +25,13 @@ if (isset($_GET["auth"])) {
 
 
         $formatted_results = $rows;
-        print json_encode($formatted_results, JSON_UNESCAPED_SLASHES);
+        print display_json($formatted_results);
 
     } else {
-        echo json_encode("Invalid API key", JSON_UNESCAPED_SLASHES);
+        echo display_json("Invalid API Key");
     }
 } else {
-    echo json_encode("Missing API key", JSON_UNESCAPED_SLASHES);
+    echo display_json("Missing API Key");
 }
 
 ?>
