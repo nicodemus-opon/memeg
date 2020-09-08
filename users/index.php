@@ -26,7 +26,11 @@ if (isset($datax["user_name"])) {
 
 //$stmt->bind_param("i", $id);
     $stmt->execute();
-    echo display_json($con->error);
+    if($con->error!="") {
+        echo display_json($con->error);
+    }else{
+        echo display_json("Login Successful");
+    }
 //echo "New records created successfullyn ";
 //echo ;
 
