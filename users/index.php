@@ -29,7 +29,7 @@ if (isset($datax["user_name"])) {
     if($con->error!="") {
         echo display_json($con->error);
     }else{
-        echo '{ "message":"Login successful"';
+        echo '{ "message":"Login successful"}';
     }
 //echo "New records created successfullyn ";
 //echo ;
