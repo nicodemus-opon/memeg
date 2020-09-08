@@ -19,7 +19,7 @@ if (isset($datax["user_name"])) {
     $sqql = "SELECT * FROM user WHERE username = '$ausername' and password = '$apassword'";
     $result = $con->query($sqql);
     while ($row = $result->fetch_assoc()) {
-        $rows[] = $row;
+        $rows = $row;
     }
     if (isset($rows)) {
         $formatted_results = $rows;
