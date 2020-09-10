@@ -9,7 +9,9 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$datax = json_decode(file_get_contents('php://input'), true);
+$datax = json_decode(file_get_contents("php://input"), true);
+
+
 if (isset($datax["user_name"])) {
 //echo(json_encode($datax, JSON_UNESCAPED_SLASHES));
 //print_r($datax);
@@ -19,49 +21,25 @@ if (isset($datax["user_name"])) {
     $acategory = $datax["category"];
     $amtext = $datax["meme_text"];
 
-    $stmt = $con->prepare("INSERT INTO user (username, email, password,name,profile_pic,following) VALUES (?, ?, ?,?,?,?)");
+    $stmt = $con->prepare("INSERT INTO meme (username, pic_Vid, caption,category,meme_text) VALUES (?, ?, ?,?,?)");
+
     $blnk = "_";
     $blnkno = "0";
-    $stmt->bind_param("ssssss", $ausername, $aemail, $apassword, $blnk, $blnk, $blnkno);
+    $stmt->bind_param("sssss", $ausername, $apicvid, $acaption, $acategory, $amtext);
 
 
 //$stmt->bind_param("i", $id);
     $stmt->execute();
-    if($con->error!="") {
+    if ($con->error != "") {
         echo display_json($con->error);
-    }else{
-        echo '{ "message":"Login successful"}';
+    } else {
+        echo '{ "message":"added successful"}';
     }
 //echo "New records created successfullyn ";
 //echo ;
 
 //$stmt->close();
 } else {
-
-    if (isset($_GET["auth"])) {
-        $auth_k = $_GET["auth"];
-        if (auth($auth_k) != "invalid") {
-            if (isset($_GET["q"])) {
-                $sqql = "SELECT * FROM user where username='" . $_GET["q"] . "'";;
-            } else {
-                $sqql = "SELECT * FROM user";
-            }
-
-            $result = $con->query($sqql);
-            while ($row = $result->fetch_assoc()) {
-                $rows[] = $row;
-
-            }
-
-
-            $formatted_results = $rows;
-            print display_json($formatted_results);
-
-        } else {
-            echo display_json("Invalid API Key");
-        }
-    } else {
-        echo display_json("Missing API Key");
-    }
+    echo display_json("no post data");
 }
 ?>
