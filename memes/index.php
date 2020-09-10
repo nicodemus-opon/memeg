@@ -8,7 +8,8 @@ if (isset($_GET["auth"])) {
     $auth_k = $_GET["auth"];
     if (auth($auth_k) != "invalid") {
         if (isset($_GET["q"])) {
-            $sqql = "SELECT * FROM meme where caption like %".$_GET['q']."%";
+            $sqql = "SELECT * FROM meme where caption like '%".$_GET['q']."%'";
+            echo $sqql;
         } elseif (isset($_GET["m_id"])) {
             $sqql = "SELECT * FROM meme where Meme_id='" . $_GET["m_id"] . "'";
         } elseif (isset($_GET["m_id"])) {
