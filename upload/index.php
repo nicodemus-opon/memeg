@@ -25,9 +25,9 @@ if (isset($datax["user_name"])) {
 
     $blnk = "_";
     $blnkno = "0";
-    echo display_json($con->error);
+    //echo display_json($con->error);
     $stmt->bind_param("sssss", $ausername, $apicvid, $acaption, $acategory, $amtext);
-    echo display_json($con->error);
+    //echo display_json($con->error);
 
 //$stmt->bind_param("i", $id);
     $stmt->execute();
