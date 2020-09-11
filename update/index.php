@@ -19,9 +19,9 @@ if (isset($_GET["auth"])) {
         }
 
         if ($con->query($sql) === TRUE) {
-            $formatted_results = '{"message","Record updated successfully"}';
+            $formatted_results = '{"message":"Record updated successfully"}';
         } else {
-            $formatted_results = '{"message","error updating"}';
+            $formatted_results = '{"message":"error updating"}';
         }
 
         echo ($formatted_results);
