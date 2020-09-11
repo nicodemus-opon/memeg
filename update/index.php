@@ -19,12 +19,12 @@ if (isset($_GET["auth"])) {
         }
 
         if ($con->query($sql) === TRUE) {
-            $formatted_results = "Record updated successfully";
+            $formatted_results = '{"message","Record updated successfully"}';
         } else {
-            $formatted_results = "Error updating record: " . $con->error;
+            $formatted_results = '{"message","error updating"}';
         }
 
-        print display_json($formatted_results);
+        echo ($formatted_results);
 
     } else {
         echo display_json("Invalid API Key");
